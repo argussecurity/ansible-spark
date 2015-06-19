@@ -51,3 +51,9 @@
 - name: Configure Spark environment
   template: src=spark-env.sh.j2
             dest="{{ spark_conf_dir }}/conf/spark-env.sh"
+
+- name: Copy Spark default log4.properties file
+  command: cp {{ spark_conf_dir }}/conf/log4j.properties.template {{ spark_conf_dir }}/conf/log4j.properties
+
+- name: Set Spark log level
+  replace: dest={{ spark_conf_dir }}/conf/log4j.properties regexp='log4j.rootCategory=INFO' replace='log4j.rootCategory={{ spark_log_level }}'

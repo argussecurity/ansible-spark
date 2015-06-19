@@ -5,6 +5,7 @@ spark_conf_dir: "/etc/spark"
 spark_usr_dir: "/usr/lib/spark"
 spark_lib_dir: "/var/lib/spark"
 spark_log_dir: "/var/log/spark"
+spark_log_level: "INFO"
 spark_run_dir: "/run/spark"
 
 spark_env_extras: {}
